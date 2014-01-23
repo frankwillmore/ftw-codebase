@@ -27,5 +27,15 @@ extern "C"
 #endif
 ftw_GFG65536 *replicateGFG65536(ftw_GFG65536 *in);
 
+#ifdef __cplusplus
+extern "C"
+#endif
+ftw_GFG16M *readGFG16M(FILE *instream);
+
+#ifdef __cplusplus
+extern "C"
+#endif
+ftw_GFG16M *replicateGFG16M(ftw_GFG16M *in);
+
 #endif
 

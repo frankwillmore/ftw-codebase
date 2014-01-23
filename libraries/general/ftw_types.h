@@ -86,6 +86,17 @@ struct GFG65536
 
 typedef struct GFG65536 ftw_GFG65536;
 
+struct GFG16M
+{
+  ftw_Atom atom[16777216];
+  float box_x;
+  float box_y;
+  float box_z;
+  int n_atoms;
+};
+
+typedef struct GFG16M ftw_GFG16M;
+
 struct EnergyArray256
 {
   float energy[256][256][256];

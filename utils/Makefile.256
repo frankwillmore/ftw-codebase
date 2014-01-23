@@ -1,0 +1,26 @@
+#!/bin/make
+
+# Utilities install to home directory by default.  Change here for alternate configuration
+
+HOME_DIR:=$$HOME
+
+INCLUDE_DIR:=$(HOME_DIR)/usr/include
+INSTALL_DIR:=$(HOME_DIR)/usr/bin
+LIBRARY_DIR:=$(HOME_DIR)/usr/lib
+
+# Change the following, depending on your CUDA installation...
+
+CUDA_LIBRARY_DIR:=$(TACC_CUDA_LIB)
+CUDA_INCLUDE_DIR:=$(TACC_CUDA_INC)
+CUDA_BINARY_DIR:=$(TACC_CUDA_BIN)
+
+# Change compiler info if you dare...
+
+NVCC:=$(CUDA_BINARY_DIR)/nvcc
+
+# Probably won't want to change anything below here.
+
+gfg2fvi256: gfg2fvi256.cu
+	$(NVCC) gfg2fvi256.cu -L$(LIBRARY_DIR) -I$(INCLUDE_DIR) -L$(CUDA_LIBRARY_DIR) -I$(CUDA_INCLUDE_DIR) -lftw -lm -o gfg2fvi256
+
+

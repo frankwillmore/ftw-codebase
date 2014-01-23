@@ -15,6 +15,8 @@
 
 double box_x, box_y, box_z;
 double sfactor = 1;
+double phong = 1.0;
+double transmit = 0.0;
 
 int number_of_clusters=0;
 int number_of_cavities=0;
@@ -22,6 +24,9 @@ int number_of_pairs=0;
 double x[MAX_CAVITIES], y[MAX_CAVITIES], z[MAX_CAVITIES], d[MAX_CAVITIES];
 int cluster_number[MAX_CAVITIES];
 int cavityA[MAX_PAIRS], cavityB[MAX_PAIRS];
+int colorize=0;
+
+char *colors[] = {"Red", "Orange", "Yellow", "Green", "Blue", "Magenta", "Violet"};
 
 int main(int argc, char* argv[])
 {
@@ -31,12 +36,18 @@ int main(int argc, char* argv[])
     printf("center     \t-box [ 10 10 10 ]\n");
     printf("           \t In:  .cav\n");
     printf("           \t Out: .cluster \n"); 
+    printf("           \t -transmit [ 0.0 ]\n");
+    printf("           \t -phong [ 1.0 ]\n");
+    printf("           \t -colorize (will generate .pov output)\n");
     printf("           \t Ouput format is:  (\"%%d\t%%lf\t%%lf\t%%lf\t%%lf\\n\", cluster_number, x, y, z, d)\n");
     printf("\n");
     exit(0);
   }
+  if (getFlagParam("-colorize")) colorize = 1;
   getVectorParam("-box", &box_x, &box_y, &box_z);
   getDoubleParam("-sfactor", &sfactor);
+  getDoubleParam("-transmit", &transmit);
+  getDoubleParam("-phong", &phong);
 
   readInputStream();
   findAllPairs();
@@ -114,7 +125,12 @@ void printClusters()
 {
   int i, j;
   for (i=0; i<number_of_cavities; i++)
-    printf("%d\t%05d\t%lf\t%lf\t%lf\t%lf\n", cluster_number[i], i, x[i], y[i], z[i], d[i]);
+    if (colorize) printf("intersection {sphere{<%lf, %lf, %lf>, %lf} box {<0,0,0>< %lf, %lf, %lf>} texture{ pigment {color %s transmit %lf } finish {phong %lf} }}\n", x[i], y[i], z[i], 0.5 * d[i], box_x, box_y, box_z, colors[cluster_number[i] % 7], transmit, phong);
+//intersection {sphere{<59.084013, 4.924218, 36.765207>, 1.418338} box {<0,0,0>< 63.000000, 63.000000, 63.000000>} texture{ pigment {color White  transmit 0.500000  }  finish {phong 0.500000}  }}
+
+    // printf("%d\t%05d\t%lf\t%lf\t%lf\t%lf\t%s\n", cluster_number[i], i, x[i], y[i], z[i], d[i], colors[cluster_number[i] % 7]);
+    else printf("%d\t%05d\t%lf\t%lf\t%lf\t%lf\n", cluster_number[i], i, x[i], y[i], z[i], d[i]);
+    
 }
 
 void findAllPairs()

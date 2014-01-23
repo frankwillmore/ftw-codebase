@@ -17,7 +17,7 @@
 // In:  one cluster; 1 or more records in .cav format 
 // Out: .dst (reports one value of volume) 
 
-extern double box_x, box_y, box_z;
+double box_x, box_y, box_z;
 FILE *instream;
 extern double sfactor;
 
@@ -26,8 +26,7 @@ double x[MAX_CAVITIES], y[MAX_CAVITIES], z[MAX_CAVITIES], d[MAX_CAVITIES];
 
 int n_attempts=1000000;
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
   double tx, ty, tz;
   double volume;
   int successes=0, attempts=0;
@@ -43,8 +42,7 @@ int main(int argc, char* argv[])
 
   successes=0;
 
-  for (attempts=0; attempts<n_attempts; attempts++)
-  {
+  for (attempts=0; attempts<n_attempts; attempts++) {
     // pick a point and check inclusion
 
     tx = rnd2() * box_x;
@@ -52,11 +50,6 @@ int main(int argc, char* argv[])
     tz = rnd2() * box_z;
 
     successes += checkInclusion(tx, ty, tz);
-//    if (attempts > 100000000)
-//    {
-//      printf("too many attempts.");
-//      exit(1);
-//    }
   }
 
   volume = (box_x * box_y * box_z * successes)/attempts;
@@ -65,13 +58,11 @@ int main(int argc, char* argv[])
   return 0;
 }
 
-int checkInclusion(double tx, double ty, double tz)
-{
+int checkInclusion(double tx, double ty, double tz) {
   int i;
   double dx, dy, dz, dd;
 
-  for (i=0; i<number_of_cavities; i++)
-  {
+  for (i=0; i<number_of_cavities; i++) {
     dx = x[i] - tx;
     dy = y[i] - ty;
     dz = z[i] - tz;
@@ -84,8 +75,7 @@ int checkInclusion(double tx, double ty, double tz)
   return 0;
 }
 
-void readInputStream()
-{
+void readInputStream() {
   char line[80];
   char *xs, *ys, *zs, *ds;
 
@@ -112,7 +102,5 @@ void readInputStream()
       exit(0);
     }
   }
-  
-  V printf("%d cavities.\n", number_of_cavities);
 }
 

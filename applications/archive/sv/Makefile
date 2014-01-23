@@ -1,6 +1,6 @@
 #!/usr/bin/make
 
-HOME=/home1/00479/willmore/
+HOME=/home1/00479/willmore
 
 INCLUDE_DIR=$(HOME)/usr/include
 INSTALL_DIR=$(HOME)/usr/bin
@@ -17,23 +17,23 @@ csa:	csa.c
 	mv csa $(INSTALL_DIR)
 
 spackle:	spackle.c
-	gcc spackle.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o spackle
-	mv spackle $(HOME_DIR)/bin
+	$(CC) spackle.c -Wall -I$(INCLUDE_DIR)  -L$(LIBRARY_DIR) -lm -lftw -o spackle
+	mv spackle $(INSTALL_DIR)
 
 cell_volume:	cell_volume.c
-	gcc cell_volume.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o cell_volume 
-	mv cell_volume $(HOME_DIR)/bin
+	$(CC) cell_volume.c -Wall -I$(INCLUDE_DIR)  -L$(LIBRARY_DIR) -lm -lftw -o cell_volume 
+	mv cell_volume $(INSTALL_DIR)
 
 boxv:	boxv.c
-	gcc boxv.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o boxv 
-	mv boxv $(HOME_DIR)/bin
+	$(CC) boxv.c -Wall -I$(INCLUDE_DIR)  -L$(LIBRARY_DIR) -lm -lftw -o boxv 
+	mv boxv $(INSTALL_DIR)
 
 asph:	asph.c
-	gcc asph.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o asph
-	mv asph $(HOME_DIR)/bin
+	$(CC) asph.c -Wall -I$(INCLUDE_DIR)  -L$(LIBRARY_DIR) -lm -lftw -o asph
+	mv asph $(INSTALL_DIR)
 
 sample:	sample.c
-	gcc sample.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o sample
+	$(CC) sample.c -Wall -I$(INCLUDE_DIR)  -L$(LIBRARY_DIR) -lm -lftw -o sample
 
 install:	csa cv asph
 

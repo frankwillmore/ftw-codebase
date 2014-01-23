@@ -4,6 +4,7 @@
 
 #ifndef FTW_GFG2FVI_H
 #define FTW_GFG2FVI_H
+#endif
 
 //  These are the routines to call from outside the library
 //  They are conditionally declared extern because this header is included by the .cu file 
