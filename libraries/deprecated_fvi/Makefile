@@ -6,7 +6,7 @@ HOME=/home1/00479/willmore
 
 LIBRARY_DIR=$(HOME)/usr/lib
 INCLUDE_DIR=$(HOME)/usr/include
-INSTALL_DIR=$(HOME)/usr/bin
+BINARY_DIR=$(HOME)/usr/bin
 
 #INCLUDES=-I$(INCLUDE_DIR) 
 #CUDA_LIB=/opt/apps/cuda/3.1/cuda/lib64/

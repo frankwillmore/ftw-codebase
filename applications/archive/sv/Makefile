@@ -3,18 +3,18 @@
 HOME=/home1/00479/willmore/
 
 INCLUDE_DIR=$(HOME)/usr/include
-INSTALL_DIR=$(HOME)/usr/bin
+BINARY_DIR=$(HOME)/usr/bin
 LIBRARY_DIR=$(HOME)/usr/lib
 
 CC=icc
 
 cv:	cv.c
 	$(CC) cv.c -Wall -I$(INCLUDE_DIR) -L$(LIBRARY_DIR) -lm -lftw -o cv 
-	mv cv $(INSTALL_DIR)
+	mv cv $(BINARY_DIR)
 
 csa:	csa.c
 	$(CC) csa.c -Wall -I$(INCLUDE_DIR) -L$(LIBRARY_DIR) -lm -lftw -o csa 
-	mv csa $(INSTALL_DIR)
+	mv csa $(BINARY_DIR)
 
 spackle:	spackle.c
 	gcc spackle.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o spackle

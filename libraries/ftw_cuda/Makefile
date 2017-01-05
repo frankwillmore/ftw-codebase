@@ -8,7 +8,7 @@ HOME_DIR:=$$HOME
 
 LIBRARY_DIR:=$(HOME_DIR)/usr/lib
 INCLUDE_DIR:=$(HOME_DIR)/usr/include
-INSTALL_DIR:=$(HOME_DIR)/usr/bin
+BINARY_DIR:=$(HOME_DIR)/usr/bin
 
 # Not using these... going to let the cuda modules do the work.
 #INCLUDES=-I$(INCLUDE_DIR) 

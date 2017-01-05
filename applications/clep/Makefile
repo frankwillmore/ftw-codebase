@@ -2,7 +2,7 @@
 
 HOME=/home1/00479/willmore
 
-INSTALL_DIR=$(HOME)/usr/bin
+BINARY_DIR=$(HOME)/usr/bin
 LIBRARY_DIR=$(HOME)/usr/lib
 INCLUDE_DIR=$(HOME)/usr/include
 
@@ -14,7 +14,7 @@ test:	test.c
 #	gcc test.c -O2 -o test -I$(INCLUDE_DIR) -L$(LIBRARY_DIR) -lftw -lm -I. -lftw_energy
 
 install:	clep 
-	cp clep $(INSTALL_DIR) 
+	cp clep $(BINARY_DIR) 
 
 clean:
 	rm -f *.o clep

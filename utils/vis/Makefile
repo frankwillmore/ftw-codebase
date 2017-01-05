@@ -5,7 +5,7 @@
 
 HOME_DIR:=$$HOME
 
-INSTALL_DIR:=$(HOME_DIR)/usr/bin
+BINARY_DIR:=$(HOME_DIR)/usr/bin
 
 INCLUDES:=-I. -I$(HOME_DIR)/usr/include
 
@@ -26,7 +26,7 @@ command_line_parser.o:	command_line_parser.c command_line_parser.h
 	$(CC) $(CFLAGS) $(INCLUDES) -c command_line_parser.c
 
 install: vis
-	mv vis $(INSTALL_DIR)
+	mv vis $(BINARY_DIR)
 	make clean
 
 clean:

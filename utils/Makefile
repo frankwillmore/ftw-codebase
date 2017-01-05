@@ -5,7 +5,7 @@
 HOME_DIR:=$$HOME
 
 INCLUDE_DIR:=$(HOME_DIR)/usr/include
-INSTALL_DIR:=$(HOME_DIR)/usr/bin
+BINARY_DIR:=$(HOME_DIR)/usr/bin
 LIBRARY_DIR:=$(HOME_DIR)/usr/lib
 
 # Change the following, depending on your CUDA installation...
@@ -43,11 +43,11 @@ utils: $(UTILS)
 cuda-utils: $(CUDA_UTILS)
 
 install: utils
-	mv $(UTILS) $(INSTALL_DIR)
+	mv $(UTILS) $(BINARY_DIR)
 
 install-cuda:	cuda-utils
 	@echo installing cuda utils...
-	mv $(CUDA_UTILS) $(INSTALL_DIR)
+	mv $(CUDA_UTILS) $(BINARY_DIR)
 
 everything:  utils cuda-utils
 

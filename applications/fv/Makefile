@@ -1,7 +1,7 @@
 #!/usr/bin/make
 
 
-INSTALL_DIR=~/usr/local/bin
+BINARY_DIR=~/usr/local/bin
 
 INCLUDES=-I~/usr/include -I.
 LIBS=-L~/lib -L/opt/apps/cuda/3.1/cuda/lib64/
@@ -24,4 +24,4 @@ clean:
 	rm -f fv
 
 install: fv
-	mv fv ${INSTALL_DIR}
+	mv fv ${BINARY_DIR}

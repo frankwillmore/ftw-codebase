@@ -7,7 +7,7 @@
 
 HOME_DIR:=$$HOME
 
-INSTALL_DIR:=$(HOME_DIR)/usr/bin
+BINARY_DIR:=$(HOME_DIR)/usr/bin
 LIBRARY_DIR:=$(HOME_DIR)/usr/lib
 INCLUDE_DIR:=$(HOME_DIR)/usr/include
 
@@ -28,7 +28,7 @@ io_setup.o:	io_setup.c io_setup.h
 	$(CC) $(CCFLAGS) -c io_setup.c -I$(INCLUDE_DIR) -L$(LIBRARY_DIR)
 
 install:	pddx 
-	mv pddx $(INSTALL_DIR) 
+	mv pddx $(BINARY_DIR) 
 
 clean:
 	rm -f *.o pddx ddx dddx trace_ddx cull 

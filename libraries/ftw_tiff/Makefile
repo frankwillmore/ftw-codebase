@@ -7,7 +7,7 @@ TIFF_INCLUDE:=/usr/include
 
 LIBRARY_DIR:=$(HOME_DIR)/usr/lib
 INCLUDE_DIR:=$(HOME_DIR)/usr/include
-INSTALL_DIR:=$(HOME_DIR)/usr/bin
+BINARY_DIR:=$(HOME_DIR)/usr/bin
 
 INCLUDES:=-I$(INCLUDE_DIR) 
 LIBS:=-L$(LIBRARY_DIR) 
