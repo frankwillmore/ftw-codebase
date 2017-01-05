@@ -18,19 +18,19 @@ csa:	csa.c
 
 spackle:	spackle.c
 	gcc spackle.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o spackle
-	mv spackle $(HOME_DIR)/bin
+	mv spackle $(INSTALL_DIR)/bin
 
 cell_volume:	cell_volume.c
 	gcc cell_volume.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o cell_volume 
-	mv cell_volume $(HOME_DIR)/bin
+	mv cell_volume $(INSTALL_DIR)/bin
 
 boxv:	boxv.c
 	gcc boxv.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o boxv 
-	mv boxv $(HOME_DIR)/bin
+	mv boxv $(INSTALL_DIR)/bin
 
 asph:	asph.c
 	gcc asph.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o asph
-	mv asph $(HOME_DIR)/bin
+	mv asph $(INSTALL_DIR)/bin
 
 sample:	sample.c
 	gcc sample.c -Wall -I/home/willmore/usr/include -L/home/willmore/lib -lm -lftw -o sample

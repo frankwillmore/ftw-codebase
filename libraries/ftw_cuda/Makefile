@@ -4,11 +4,11 @@
 
 #  Default install location is off of home
 
-HOME_DIR:=$$HOME
+INSTALL_DIR:=$$HOME
 
-LIBRARY_DIR:=$(HOME_DIR)/usr/lib
-INCLUDE_DIR:=$(HOME_DIR)/usr/include
-BINARY_DIR:=$(HOME_DIR)/usr/bin
+LIBRARY_DIR:=$(INSTALL_DIR)/usr/lib
+INCLUDE_DIR:=$(INSTALL_DIR)/usr/include
+BINARY_DIR:=$(INSTALL_DIR)/usr/bin
 
 # Not using these... going to let the cuda modules do the work.
 #INCLUDES=-I$(INCLUDE_DIR) 

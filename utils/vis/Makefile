@@ -3,11 +3,11 @@
 # 	By default, the install will be based from the users' home directory.  
 # 	Change the value here to use any other directory. 
 
-HOME_DIR:=$$HOME
+INSTALL_DIR:=$$HOME
 
-BINARY_DIR:=$(HOME_DIR)/usr/bin
+BINARY_DIR:=$(INSTALL_DIR)/usr/bin
 
-INCLUDES:=-I. -I$(HOME_DIR)/usr/include
+INCLUDES:=-I. -I$(INSTALL_DIR)/usr/include
 
 CFLAGS:=-O2 -Wall
 CC:=gcc

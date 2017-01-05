@@ -5,11 +5,11 @@
 
 # Defualt install is to user home
 
-HOME_DIR:=$$HOME
+INSTALL_DIR:=$$HOME
 
-BINARY_DIR:=$(HOME_DIR)/usr/bin
-LIBRARY_DIR:=$(HOME_DIR)/usr/lib
-INCLUDE_DIR:=$(HOME_DIR)/usr/include
+BINARY_DIR:=$(INSTALL_DIR)/usr/bin
+LIBRARY_DIR:=$(INSTALL_DIR)/usr/lib
+INCLUDE_DIR:=$(INSTALL_DIR)/usr/include
 
 CC:=icc
 CFLAGS:=-Wall -O3 -lftw

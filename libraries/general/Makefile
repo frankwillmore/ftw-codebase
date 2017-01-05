@@ -4,10 +4,10 @@
 
 # Default install is to user home
 
-HOME_DIR:=$$HOME
-INCLUDE_DIR:=$(HOME_DIR)/usr/include
-LIBRARY_DIR:=$(HOME_DIR)/usr/lib
-BINARY_DIR:=$(HOME_DIR)/usr/bin
+INSTALL_DIR:=$$HOME
+INCLUDE_DIR:=$(INSTALL_DIR)/usr/include
+LIBRARY_DIR:=$(INSTALL_DIR)/usr/lib
+BINARY_DIR:=$(INSTALL_DIR)/usr/bin
 
 CC:=icc
 CFLAGS:= -O2 -Wall -fPIC

@@ -1,9 +1,9 @@
 #!/usr/bin/make
 
-HOME_DIR=/home/willmore
+INSTALL_DIR=/home/willmore
 
 rarify:	rarify.c
-	gcc rarify.c -I$(HOME_DIR)/usr/include -L$(HOME_DIR)/lib -lftw -o rarify
+	gcc rarify.c -I$(INSTALL_DIR)/usr/include -L$(INSTALL_DIR)/lib -lftw -o rarify
 
 install:	rarify
-	mv rarify $(HOME_DIR)/bin
+	mv rarify $(INSTALL_DIR)/bin

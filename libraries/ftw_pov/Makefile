@@ -1,11 +1,11 @@
 #!/bin/make
 
 #  Install to user home by default
-HOME_DIR:=$$HOME
+INSTALL_DIR:=$$HOME
 
-LIBRARY_DIR:=$(HOME_DIR)/usr/lib
-INCLUDE_DIR:=$(HOME_DIR)/usr/include
-BINARY_DIR:=$(HOME_DIR)/usr/bin
+LIBRARY_DIR:=$(INSTALL_DIR)/usr/lib
+INCLUDE_DIR:=$(INSTALL_DIR)/usr/include
+BINARY_DIR:=$(INSTALL_DIR)/usr/bin
 
 INCLUDES:=-I$(INCLUDE_DIR) 
 LIBS:=-L$(LIBRARY_DIR) 
@@ -15,7 +15,7 @@ CFLAGS:=-O2
 
 echo:	
 	@echo "Please specify a target, e.g. 'make install' "
-	@echo $(HOME_DIR)
+	@echo $(INSTALL_DIR)
 
 ftw_povheader.o:       ftw_povheader.c ftw_pov.h
 	$(CC) $(CFLAGS) ftw_povheader.c -c -fPIC -L$(LIBRARY_DIR) -I$(INCLUDE_DIR)

@@ -1,9 +1,9 @@
 #!/usr/bin/make
 
-HOME_DIR=/home/willmore
+INSTALL_DIR=/home/willmore
 
 nanopore:	nanopore.c
-	gcc nanopore.c -I$(HOME_DIR)/usr/include -L$(HOME_DIR)/lib -lftw -o nanopore
+	gcc nanopore.c -I$(INSTALL_DIR)/usr/include -L$(INSTALL_DIR)/lib -lftw -o nanopore
 
 install:	nanopore
-	mv nanopore $(HOME_DIR)/bin
+	mv nanopore $(INSTALL_DIR)/bin

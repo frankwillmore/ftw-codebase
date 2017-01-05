@@ -2,11 +2,11 @@
 
 # Utilities install to home directory by default.  Change here for alternate configuration
 
-HOME_DIR:=$$HOME
+INSTALL_DIR:=$$HOME
 
-INCLUDE_DIR:=$(HOME_DIR)/usr/include
-BINARY_DIR:=$(HOME_DIR)/usr/bin
-LIBRARY_DIR:=$(HOME_DIR)/usr/lib
+INCLUDE_DIR:=$(INSTALL_DIR)/usr/include
+BINARY_DIR:=$(INSTALL_DIR)/usr/bin
+LIBRARY_DIR:=$(INSTALL_DIR)/usr/lib
 
 # Change the following, depending on your CUDA installation...
 
